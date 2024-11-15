@@ -1,23 +1,25 @@
-package br.com.samuelengcomp.controller;
+package br.com.samuelengcomp.api.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import br.com.samuelengcomp.domain.entities.Origem;
+
 @RestController
 @RequestMapping("/dash")
 public class TesteController {
-
 	
 	@GetMapping("/teste")
-	public String hello() {
+	public void hello() {
 		
-		int a = 20; 
-		int b = 25;
-		int soma = a + b;
+		var a = Origem.INTERNACIONAL; 
+		var b = Origem.NACIONAL;
 		
+		System.out.println("Origem a: " + a.getDescricao());
 		
-		return "Iniciando projeto " + soma;
+		System.out.println("Origem b: " + b);
+		
 	}
-	
+
 }
